@@ -1,0 +1,15 @@
+from sympy import *
+import math
+import sympy
+
+x=symbols("x")
+expr=((x**2)-1)
+n=input("Pick a number to raise and differentiate our function to ")
+
+RaisedExpr=expand(expr**n)
+
+while n>0:
+    value=sympy.diff(RaisedExpr,x)
+    n=n-1
+    RaisedExpr=value
+print value
