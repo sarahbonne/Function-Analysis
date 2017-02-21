@@ -1,0 +1,19 @@
+from sympy import *
+import math
+import sympy
+
+x=symbols("x")
+expr=((x**2)-1)
+n=input("Pick a number to raise and differentiate our function to ")
+l=n #we will use this number to divide by n! and 2^n
+
+RaisedExpr=expand(expr**n)
+
+while n>0:
+    value=sympy.diff(RaisedExpr,x)
+    n=n-1
+    RaisedExpr=value
+print str(value) + ", this is our differentiation of the raised function"
+
+CompleteResult=value/(math.factorial(l)*(2**l))
+print "This is the value of Legendre Polynomial P(%s), %s" %(l,CompleteResult) 
